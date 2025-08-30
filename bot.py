@@ -1,9 +1,8 @@
 import os
-from telegram import Update
-from telegram.ext import Application, MessageHandler, filters, ContextTypes
 
-# Берём токен из переменной окружения Railway
-TOKEN = os.getenv(8412312571:AAFRTFSxKg9LlhOk4HadxMIZ85YTY7LegS4"")
+# получаем токен из переменных окружения
+TOKEN = os.getenv("BOT_TOKEN")
+
 
 # Хэндлер для обработки сообщений
 async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
