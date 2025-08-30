@@ -6,7 +6,7 @@ from telegram.ext import Application, MessageHandler, filters, ContextTypes
 TOKEN = os.getenv("BOT_TOKEN")
 
 # проверим токен
-print("TOKEN:", TOKEN[:10] if TOKEN else "NOT FOUND")
+print(">>> TOKEN LOADED:", TOKEN[:10] if TOKEN else "NOT FOUND")
 
 # хендлер сообщений
 async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -21,7 +21,7 @@ async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     app = Application.builder().token(TOKEN).build()
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, message_handler))
-    print("🚀 Бот запущен!")
+    print("🤖 Бот запущен!")
     app.run_polling()
 
 if __name__ == "__main__":
